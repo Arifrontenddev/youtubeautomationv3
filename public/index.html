@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YouTube Agent Automation Studio — 11 Agent Skills</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+  <div class="app-layout">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="logo-mark">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+          </svg>
+        </div>
+        <div class="logo-text">
+          <h2>YT STUDIO</h2>
+          <span class="badge badge-red">Agent Skill Suite</span>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-section-label">PRODUCTION PIPELINE</div>
+        <button class="nav-item active" data-tab="tab-dashboard" id="nav-dashboard">
+          <span class="nav-icon">🚀</span>
+          <span>Mission Control</span>
+        </button>
+        <button class="nav-item" data-tab="tab-script" id="nav-script">
+          <span class="nav-icon">⚡</span>
+          <span>Hook & Script Lab</span>
+          <span class="nav-pill">/yt-script</span>
+        </button>
+        <button class="nav-item" data-tab="tab-package" id="nav-package">
+          <span class="nav-icon">📦</span>
+          <span>Packaging & Linter</span>
+          <span class="nav-pill">/yt-package</span>
+        </button>
+        <button class="nav-item" data-tab="tab-edit" id="nav-edit">
+          <span class="nav-icon">✂️</span>
+          <span>Edit Decision List</span>
+          <span class="nav-pill">/yt-edit</span>
+        </button>
+        <button class="nav-item" data-tab="tab-chapters" id="nav-chapters">
+          <span class="nav-icon">📑</span>
+          <span>Chapters Builder</span>
+          <span class="nav-pill">/yt-chapters</span>
+        </button>
+        <button class="nav-item" data-tab="tab-shorts" id="nav-shorts">
+          <span class="nav-icon">📱</span>
+          <span>Shorts Extractor</span>
+          <span class="nav-pill">/yt-shorts</span>
+        </button>
+        <button class="nav-item" data-tab="tab-seo" id="nav-seo">
+          <span class="nav-icon">🔍</span>
+          <span>SEO & Metadata</span>
+          <span class="nav-pill">/yt-seo</span>
+        </button>
+
+        <div class="nav-section-label">GROWTH & ANALYTICS</div>
+        <button class="nav-item" data-tab="tab-retention" id="nav-retention">
+          <span class="nav-icon">📉</span>
+          <span>Retention Radar</span>
+          <span class="nav-pill">/yt-retention</span>
+        </button>
+        <button class="nav-item" data-tab="tab-viral" id="nav-viral">
+          <span class="nav-icon">💥</span>
+          <span>Viral Outlier Radar</span>
+          <span class="nav-pill">/yt-viral</span>
+        </button>
+        <button class="nav-item" data-tab="tab-comment" id="nav-comment">
+          <span class="nav-icon">💬</span>
+          <span>Comment Manager</span>
+          <span class="nav-pill">/yt-comment</span>
+        </button>
+        <button class="nav-item" data-tab="tab-audit" id="nav-audit">
+          <span class="nav-icon">🎯</span>
+          <span>Audit & Weekly Plan</span>
+          <span class="nav-pill">/yt-audit</span>
+        </button>
+
+        <div class="nav-section-label">CONFIGURATION</div>
+        <button class="nav-item" data-tab="tab-voice" id="nav-voice">
+          <span class="nav-icon">🎙️</span>
+          <span>Voice Profile</span>
+          <span class="nav-pill">voice.md</span>
+        </button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="agent-status-card">
+          <div class="status-indicator"></div>
+          <div class="status-info">
+            <span class="status-title">11 Skills Active</span>
+            <span class="status-sub">Zero API keys required</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+      <!-- Top Bar -->
+      <header class="top-bar">
+        <div class="page-title-group">
+          <h1 id="page-heading">Mission Control</h1>
+          <p id="page-subheading">End-to-End YouTube Automation Pipeline & Agent Suite</p>
+        </div>
+        <div class="top-bar-actions">
+          <button class="btn btn-outline" id="btn-export-full-bundle">
+            <span>📦</span> Export Full Video Bundle
+          </button>
+          <button class="btn btn-primary" id="btn-quick-run-pipeline">
+            <span>⚡</span> Quick Run Workflow
+          </button>
+        </div>
+      </header>
+
+      <!-- TAB 1: MISSION CONTROL / DASHBOARD -->
+      <section class="tab-pane active" id="tab-dashboard">
+        <div class="hero-banner">
+          <div class="hero-content">
+            <div class="tag-row">
+              <span class="badge badge-accent">11 AGENT SKILLS</span>
+              <span class="badge badge-green">6 PYTHON ENGINES</span>
+              <span class="badge badge-purple">MIT LICENSED</span>
+            </div>
+            <h2>Automate Your Complete YouTube Production Cycle</h2>
+            <p>From 21 scored viral hook formulas, title-thumbnail linting, transcript edit decision lists, to audience retention diagnostics and shorts extraction.</p>
+            
+            <div class="workflow-quick-bar">
+              <input type="text" id="quick-topic-input" placeholder="Enter video idea or topic (e.g. 'Build an AI Agent in 15 Minutes')..." value="How to Build Autonomous AI Agents in 2026">
+              <button class="btn btn-red" id="btn-launch-full-auto">⚡ Generate Complete Package</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-card" data-action="tab-script">
+            <div class="stat-icon">⚡</div>
+            <div class="stat-content">
+              <h3>21 Hook Formulas</h3>
+              <p>5-factor algorithmic scoring</p>
+              <span class="stat-link">Launch Hook Lab →</span>
+            </div>
+          </div>
+          <div class="stat-card" data-action="tab-package">
+            <div class="stat-icon">📦</div>
+            <div class="stat-content">
+              <h3>Packaging Linter</h3>
+              <p>Desktop & mobile preview</p>
+              <span class="stat-link">Test Title/Thumb →</span>
+            </div>
+          </div>
+          <div class="stat-card" data-action="tab-edit">
+            <div class="stat-icon">✂️</div>
+            <div class="stat-content">
+              <h3>Dead-Air EDL</h3>
+              <p>Cut filler & restarts</p>
+              <span class="stat-link">Process Transcript →</span>
+            </div>
+          </div>
+          <div class="stat-card" data-action="tab-retention">
+            <div class="stat-icon">📉</div>
+            <div class="stat-content">
+              <h3>Retention Radar</h3>
+              <p>Hook leak & cliff analysis</p>
+              <span class="stat-link">Inspect Curve →</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Master Video Output Box (When full auto is run) -->
+        <div class="card master-output-card" id="master-output-card" style="display: none;">
+          <div class="card-header">
+            <div class="header-left">
+              <span class="card-badge">PRODUCTION BUNDLE READY</span>
+              <h3>Generated Video Production Bundle</h3>
+            </div>
+            <div class="header-actions">
+              <button class="btn btn-sm btn-outline" id="btn-copy-master-bundle">Copy Markdown</button>
+              <button class="btn btn-sm btn-primary" id="btn-download-master-bundle">Download .md</button>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="master-preview-grid">
+              <div class="master-preview-block">
+                <h4>🏆 Winning Hook & Formula</h4>
+                <div class="hook-callout" id="master-hook-preview"></div>
+              </div>
+              <div class="master-preview-block">
+                <h4>📦 Packaging & Thumbnail</h4>
+                <div class="pkg-callout" id="master-pkg-preview"></div>
+              </div>
+            </div>
+
+            <!-- AI Video Generator & YouTube Uploader Action Strip -->
+            <div class="video-automation-strip mt-4">
+              <div class="strip-section">
+                <h4>🎬 Automated AI Video Creator</h4>
+                <div class="strip-controls">
+                  <select id="master-voice-select">
+                    <option value="guy">Voice: Guy (Clear & Natural)</option>
+                    <option value="christopher">Voice: Christopher (Deep & Authoritative)</option>
+                    <option value="aria">Voice: Aria (Energetic Tech)</option>
+                    <option value="jenny">Voice: Jenny (Warm & Conversational)</option>
+                    <option value="brian">Voice: Brian (British Crisp)</option>
+                  </select>
+                  <button class="btn btn-red" id="btn-render-master-video">🎬 Render AI Video (.mp4)</button>
+                </div>
+              </div>
+
+              <div class="strip-section">
+                <h4>🚀 Direct YouTube Upload</h4>
+                <div class="strip-controls">
+                  <select id="master-privacy-select">
+                    <option value="private">Privacy: Private (Draft Review)</option>
+                    <option value="unlisted">Privacy: Unlisted</option>
+                    <option value="public">Privacy: Public (Direct Publish)</option>
+                  </select>
+                  <button class="btn btn-primary" id="btn-upload-master-youtube">🚀 1-Click Upload to YouTube</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Rendered Video Player Card -->
+            <div class="rendered-video-card mt-4" id="rendered-video-container" style="display: none;">
+              <div class="video-player-header">
+                <h4>📺 Live AI Video Preview (.mp4)</h4>
+                <div class="player-meta-badges">
+                  <span class="badge badge-green" id="video-dur-badge">Duration: 0.0s</span>
+                  <a class="btn btn-sm btn-outline" id="btn-download-mp4" href="#" download>⬇️ Download MP4</a>
+                </div>
+              </div>
+              <div class="video-player-wrapper mt-2">
+                <video id="master-video-player" controls style="width: 100%; border-radius: 8px; max-height: 440px; background: #000;"></video>
+              </div>
+              <div id="youtube-upload-status-box" class="mt-3" style="display: none;"></div>
+            </div>
+
+            <div class="tabs-subnav mt-4">
+              <button class="subtab-btn active" data-sub="sub-script">Spoken Script & Beats</button>
+              <button class="subtab-btn" data-sub="sub-seo">SEO & Description</button>
+              <button class="subtab-btn" data-sub="sub-edl">Edit Instructions</button>
+            </div>
+            <div class="subtab-content active" id="sub-script">
+              <div class="script-beats-container" id="master-script-beats"></div>
+            </div>
+            <div class="subtab-content" id="sub-seo">
+              <pre class="code-box" id="master-seo-content"></pre>
+            </div>
+            <div class="subtab-content" id="sub-edl">
+              <div class="edl-box" id="master-edl-content"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 2: HOOK & SCRIPT LAB -->
+      <section class="tab-pane" id="tab-script">
+        <div class="pane-grid-2">
+          <!-- Left: Input & Settings -->
+          <div class="card">
+            <div class="card-header">
+              <h3>⚡ Hook & Script Lab</h3>
+              <button class="btn btn-sm btn-ghost" id="btn-sample-script">Load Sample Idea</button>
+            </div>
+            <div class="card-body">
+              <div class="form-group">
+                <label for="script-topic">Video Topic / Core Concept</label>
+                <textarea id="script-topic" rows="3" placeholder="What is this video about?"></textarea>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="script-duration">Target Length</label>
+                  <select id="script-duration">
+                    <option value="5">5 Minutes (~750 words)</option>
+                    <option value="8" selected>8 Minutes (~1,200 words)</option>
+                    <option value="12">12 Minutes (~1,800 words)</option>
+                    <option value="1">Shorts (60s / ~150 words)</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="script-cta">Single Call to Action</label>
+                  <input type="text" id="script-cta" value="Comment your biggest takeaway below">
+                </div>
+              </div>
+
+              <div class="action-btn-row">
+                <button class="btn btn-primary" id="btn-generate-hooks">1. Generate & Score 5 Hooks</button>
+                <button class="btn btn-red" id="btn-generate-full-script">2. Generate Full Script</button>
+              </div>
+
+              <hr class="divider">
+
+              <div class="form-group">
+                <label for="single-hook-input">Or Score Any Custom Hook with <code>hookscore.py</code>:</label>
+                <div class="input-with-button">
+                  <input type="text" id="single-hook-input" placeholder="Paste single hook to score...">
+                  <button class="btn btn-outline" id="btn-score-single-hook">Score Hook</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Hook Scores & Diagnostic Panel -->
+          <div class="card">
+            <div class="card-header">
+              <h3>🎯 Hook Score & Diagnostic</h3>
+              <span class="badge badge-gray" id="hook-count-badge">5 Formulas Evaluated</span>
+            </div>
+            <div class="card-body">
+              <div id="hook-results-list" class="hook-results-list">
+                <div class="empty-state">
+                  <div class="empty-icon">⚡</div>
+                  <h4>No Hook Generated Yet</h4>
+                  <p>Click "Generate & Score 5 Hooks" or score a custom hook.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Full Script Editor / Output -->
+        <div class="card mt-4" id="full-script-card" style="display: none;">
+          <div class="card-header">
+            <div>
+              <h3>📝 Spoken Script & Retention Beats</h3>
+              <div class="meta-pills" id="script-meta-pills"></div>
+            </div>
+            <div class="header-actions">
+              <button class="btn btn-sm btn-outline" id="btn-copy-script">Copy Script</button>
+            </div>
+          </div>
+          <div class="card-body">
+            <div id="script-beats-output" class="script-beats-timeline"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 3: PACKAGING & LINTER -->
+      <section class="tab-pane" id="tab-package">
+        <div class="pane-grid-2">
+          <!-- Left: Input & Linter -->
+          <div class="card">
+            <div class="card-header">
+              <h3>📦 Title & Thumbnail Linter</h3>
+              <button class="btn btn-sm btn-ghost" id="btn-sample-package">Load Sample Pair</button>
+            </div>
+            <div class="card-body">
+              <div class="form-group">
+                <label for="pkg-title">Video Title (Hard Limit: 100, Search: 60, Mobile: 40)</label>
+                <input type="text" id="pkg-title" placeholder="e.g., Why 90% of AI Agents Fail (And How to Fix It)">
+                <div class="char-meter">
+                  <span id="pkg-title-char-count">0</span> characters
+                  <span class="meter-bar"><span id="pkg-title-meter-fill"></span></span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="pkg-thumb">Thumbnail Text (Max 3-4 Words)</label>
+                <input type="text" id="pkg-thumb" placeholder="e.g., THE 1 FIX">
+                <small class="form-hint">Rule: The thumbnail should say what the title does NOT say. Never repeat words.</small>
+              </div>
+
+              <div class="action-btn-row">
+                <button class="btn btn-primary" id="btn-lint-package">Lint Pairing with <code>title.py</code></button>
+                <button class="btn btn-outline" id="btn-generate-package-ideas">Suggest 5 Title Pairs</button>
+              </div>
+
+              <!-- Linter Results -->
+              <div class="linter-results mt-4" id="linter-results-box" style="display: none;">
+                <div class="score-banner">
+                  <div class="score-badge" id="pkg-score-badge">0/100</div>
+                  <div class="score-meta">
+                    <h4 id="pkg-score-status">Evaluation Pending</h4>
+                    <p id="pkg-score-desc">Algorithmic Title & Thumbnail Pairing Lint</p>
+                  </div>
+                </div>
+
+                <div class="issues-list" id="pkg-issues-list"></div>
+                <div class="good-list" id="pkg-good-list"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Visual Simulators -->
+          <div class="card">
+            <div class="card-header">
+              <h3>📱 Realistic YouTube Previews</h3>
+              <span class="badge badge-accent">Live Simulation</span>
+            </div>
+            <div class="card-body">
+              <!-- Desktop Search Preview -->
+              <div class="preview-section-title">🖥️ Desktop Search Result (60 Char Cut)</div>
+              <div class="yt-desktop-preview">
+                <div class="yt-thumb-mock">
+                  <div class="yt-thumb-inner" id="preview-thumb-text">THE 1 FIX</div>
+                  <span class="yt-dur-pill">8:24</span>
+                </div>
+                <div class="yt-meta-mock">
+                  <h4 class="yt-title-mock" id="preview-desktop-title">Why 90% of AI Agents Fail (And How to Fix It)</h4>
+                  <div class="yt-channel-row">Your Channel • 142K views • 2 days ago</div>
+                  <div class="yt-desc-mock">In this video, we break down the core mechanics of AI agents with a complete step-by-step practical guide...</div>
+                </div>
+              </div>
+
+              <!-- Mobile Feed Preview -->
+              <div class="preview-section-title mt-4">📱 Mobile Home Feed (40 Char Cut)</div>
+              <div class="yt-mobile-preview">
+                <div class="yt-mobile-thumb">
+                  <div class="yt-thumb-inner" id="preview-mobile-thumb-text">THE 1 FIX</div>
+                  <span class="yt-dur-pill">8:24</span>
+                </div>
+                <div class="yt-mobile-meta">
+                  <div class="yt-avatar"></div>
+                  <div class="yt-mobile-text">
+                    <h4 class="yt-mobile-title" id="preview-mobile-title">Why 90% of AI Agents Fail (And How to...</h4>
+                    <p>Your Channel • 142K views • 2 days ago</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Suggested Pairs List -->
+              <div id="suggested-packages-container" class="mt-4" style="display:none;">
+                <div class="preview-section-title">✨ Recommended High-Scoring Pairs</div>
+                <div id="suggested-packages-list" class="suggested-packages-list"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 4: EDIT DECISION LIST (EDL) -->
+      <section class="tab-pane" id="tab-edit">
+        <div class="pane-grid-2">
+          <div class="card">
+            <div class="card-header">
+              <h3>✂️ Dead-Air & Retake Cutter</h3>
+              <button class="btn btn-sm btn-ghost" id="btn-sample-transcript">Load Sample Transcript</button>
+            </div>
+            <div class="card-body">
+              <div class="form-group">
+                <label for="edl-transcript">Timestamped Transcript (SRT / VTT / Whisper JSON)</label>
+                <textarea id="edl-transcript" rows="8" placeholder="Paste your .srt, .vtt, or whisper json transcript here..."></textarea>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="edl-floor">Dead-Air Floor (Seconds)</label>
+                  <input type="number" id="edl-floor" value="0.45" step="0.05" min="0.2" max="1.5">
+                  <small class="form-hint">Default 0.45s. Fast pacing: 0.35s.</small>
+                </div>
+              </div>
+
+              <div class="action-btn-row">
+                <button class="btn btn-primary" id="btn-process-edl">Generate EDL with <code>deadair.py</code></button>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h3>📊 Edit Decision Stats</h3>
+              <button class="btn btn-sm btn-outline" id="btn-copy-edl">Copy Cuts</button>
+            </div>
+            <div class="card-body">
+              <div id="edl-stats-grid" class="edl-stats-grid" style="display: none;">
+                <div class="metric-card">
+                  <span class="metric-label">Original Duration</span>
+                  <span class="metric-value" id="edl-stat-original">0.0s</span>
+                </div>
+                <div class="metric-card">
+                  <span class="metric-label">Time Removed</span>
+                  <span class="metric-value text-red" id="edl-stat-removed">0.0s</span>
+                </div>
+                <div class="metric-card">
+                  <span class="metric-label">Final Runtime</span>
+                  <span class="metric-value text-green" id="edl-stat-final">0.0s</span>
+                </div>
+                <div class="metric-card">
+                  <span class="metric-label">% Shorter</span>
+                  <span class="metric-value text-accent" id="edl-stat-pct">0%</span>
+                </div>
+              </div>
+
+              <div id="edl-cuts-list" class="cuts-timeline">
+                <div class="empty-state">
+                  <div class="empty-icon">✂️</div>
+                  <h4>No Cuts Processed</h4>
+                  <p>Paste a transcript and click generate to see DEAD air, FILLER, and REPEAT retakes.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 5: CHAPTERS BUILDER -->
+      <section class="tab-pane" id="tab-chapters">
+        <div class="pane-grid-2">
+          <div class="card">
+            <div class="card-header">
+              <h3>📑 YouTube Chapters Generator</h3>
+              <button class="btn btn-sm btn-ghost" id="btn-sample-chapters-transcript">Load Sample Transcript</button>
+            </div>
+            <div class="card-body">
+              <div class="form-group">
+                <label for="chapters-transcript">Transcript (SRT / VTT)</label>
+                <textarea id="chapters-transcript" rows="8" placeholder="Paste transcript to generate auto-validated YouTube chapters..."></textarea>
+              </div>
+              <div class="form-group">
+                <label for="chapters-target-count">Target Number of Chapters</label>
+                <input type="number" id="chapters-target-count" value="7" min="3" max="15">
+              </div>
+              <button class="btn btn-primary" id="btn-generate-chapters">Generate Validated Chapters</button>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h3>✅ Validated Chapter Block</h3>
+              <button class="btn btn-sm btn-outline" id="btn-copy-chapters">Copy for Description</button>
+            </div>
+            <div class="card-body">
+              <div class="rule-checklist" id="chapters-rule-checklist">
+                <span class="rule-item" id="rule-zero">Starts at 00:00</span>
+                <span class="rule-item" id="rule-min-count">3+ Chapters</span>
+                <span class="rule-item" id="rule-min-dur">10s+ Duration Each</span>
+              </div>
+              <textarea id="chapters-output-box" class="code-box-editor mt-3" rows="10" placeholder="0:00 Introduction&#10;1:20 Core Concept..."></textarea>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 6: SHORTS EXTRACTOR -->
+      <section class="tab-pane" id="tab-shorts">
+        <div class="card">
+          <div class="card-header">
+            <h3>📱 Shorts Finder & Repurposing Engine</h3>
+            <button class="btn btn-sm btn-ghost" id="btn-sample-shorts-transcript">Load Sample Long-Form Transcript</button>
+          </div>
+          <div class="card-body">
+            <div class="form-group">
+              <label for="shorts-transcript">Long Video Transcript</label>
+              <textarea id="shorts-transcript" rows="6" placeholder="Paste the full long-form transcript to extract 30-55s high-retention Shorts..."></textarea>
+            </div>
+            <button class="btn btn-red" id="btn-extract-shorts">Extract High-Retention Shorts</button>
+
+            <div id="shorts-results-grid" class="shorts-results-grid mt-4"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 7: SEO & METADATA -->
+      <section class="tab-pane" id="tab-seo">
+        <div class="pane-grid-2">
+          <div class="card">
+            <div class="card-header">
+              <h3>🔍 SEO & Description Generator</h3>
+              <button class="btn btn-sm btn-ghost" id="btn-sample-seo">Load Sample</button>
+            </div>
+            <div class="card-body">
+              <div class="form-group">
+                <label for="seo-title">Video Title</label>
+                <input type="text" id="seo-title" placeholder="Video title...">
+              </div>
+              <div class="form-group">
+                <label for="seo-topic">Core Topic & Angle</label>
+                <input type="text" id="seo-topic" placeholder="e.g. AI Agent Automation">
+              </div>
+              <div class="form-group">
+                <label for="seo-chapters-input">Chapters Block (Optional)</label>
+                <textarea id="seo-chapters-input" rows="3" placeholder="0:00 Intro&#10;1:15 Step 1..."></textarea>
+              </div>
+              <button class="btn btn-primary" id="btn-generate-seo">Generate Description & SEO</button>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h3>📋 Generated SEO Package</h3>
+              <button class="btn btn-sm btn-outline" id="btn-copy-seo">Copy Description</button>
+            </div>
+            <div class="card-body">
+              <div class="target-queries-box">
+                <h4>🎯 3 Queries This Video Should Win:</h4>
+                <ul id="seo-queries-list"></ul>
+              </div>
+              <div class="form-group mt-3">
+                <label>YouTube Description</label>
+                <textarea id="seo-description-output" class="code-box-editor" rows="10"></textarea>
+              </div>
+              <div class="form-group">
+                <label>Tags (Copy & Paste)</label>
+                <input type="text" id="seo-tags-output" readonly>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 8: RETENTION RADAR -->
+      <section class="tab-pane" id="tab-retention">
+        <div class="card">
+          <div class="card-header">
+            <h3>📉 Audience Retention Reader</h3>
+            <button class="btn btn-sm btn-ghost" id="btn-sample-retention">Load Sample Retention CSV</button>
+          </div>
+          <div class="card-body">
+            <div class="pane-grid-2">
+              <div class="form-group">
+                <label for="retention-csv-input">Retention CSV (from Studio: Analytics -> Video -> Engagement -> Download)</label>
+                <textarea id="retention-csv-input" rows="6" placeholder="Position,Percent&#10;0,100&#10;5,82&#10;15,70&#10;30,62..."></textarea>
+                <button class="btn btn-primary mt-2" id="btn-analyze-retention">Analyze Retention Curve</button>
+              </div>
+
+              <!-- Metrics -->
+              <div class="retention-metrics-box" id="retention-metrics-container" style="display: none;">
+                <div class="retention-metric">
+                  <span class="r-label">Hook Leak (0:00-0:30)</span>
+                  <span class="r-val" id="r-hook-leak">0%</span>
+                  <span class="r-badge" id="r-hook-badge">HEALTHY</span>
+                </div>
+                <div class="retention-metric">
+                  <span class="r-label">Cliff Drops</span>
+                  <span class="r-val" id="r-cliffs-count">0</span>
+                  <span class="r-sub">Sudden drop-off moments</span>
+                </div>
+                <div class="retention-metric">
+                  <span class="r-label">Slide Rate</span>
+                  <span class="r-val" id="r-slide-rate">0.0%</span>
+                  <span class="r-sub">Middle bleed rate</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- SVG Retention Chart -->
+            <div class="retention-chart-container mt-4" id="retention-chart-box" style="display: none;">
+              <h4>📈 Retention Drop-off Curve</h4>
+              <div id="retention-svg-wrapper" class="retention-svg-wrapper"></div>
+              <div class="cliffs-diagnostic-list mt-3" id="retention-cliffs-list"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 9: VIRAL OUTLIER RADAR -->
+      <section class="tab-pane" id="tab-viral">
+        <div class="card">
+          <div class="card-header">
+            <h3>💥 Viral Outlier Radar & Swipe File</h3>
+            <button class="btn btn-sm btn-ghost" id="btn-sample-viral">Load Sample Niche Data</button>
+          </div>
+          <div class="card-body">
+            <div class="form-group">
+              <label for="viral-json-input">Niche Videos JSON (Calculates Multiple Over Own Channel Median)</label>
+              <textarea id="viral-json-input" rows="6" placeholder='[{"channel":"Channel A","title":"How I Did X","views":350000}, ...]'></textarea>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="viral-min-mult">Minimum Multiplier (Default 1.5x)</label>
+                <input type="number" id="viral-min-mult" value="1.5" step="0.1" min="1.0">
+              </div>
+            </div>
+            <button class="btn btn-primary" id="btn-analyze-viral">Find Viral Outliers with <code>swipe.py</code></button>
+
+            <div id="viral-outliers-table-container" class="mt-4" style="display: none;">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Multiple</th>
+                    <th>Views</th>
+                    <th>Median</th>
+                    <th>Channel</th>
+                    <th>Title</th>
+                    <th>Formula Matched</th>
+                  </tr>
+                </thead>
+                <tbody id="viral-outliers-tbody"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 10: COMMENT MANAGER -->
+      <section class="tab-pane" id="tab-comment">
+        <div class="card">
+          <div class="card-header">
+            <h3>💬 4-Pile Comment Triage & Voice Replies</h3>
+            <button class="btn btn-sm btn-ghost" id="btn-sample-comments">Load Sample Comments</button>
+          </div>
+          <div class="card-body">
+            <div class="form-group">
+              <label for="comments-input">Paste Comments (one per line, or JSON [{"author": "...", "text": "..."}])</label>
+              <textarea id="comments-input" rows="5" placeholder="John: This video saved me 5 hours!&#10;Alice: How do I configure step 2?"></textarea>
+            </div>
+            <button class="btn btn-primary" id="btn-triage-comments">Triage & Generate Replies</button>
+
+            <div id="comments-triage-output" class="comments-piles-grid mt-4" style="display: none;">
+              <div class="pile-card superfans">
+                <h4>🔥 Superfans (<span id="count-superfans">0</span>)</h4>
+                <div class="pile-list" id="pile-superfans"></div>
+              </div>
+              <div class="pile-card questions">
+                <h4>❓ Questions (<span id="count-questions">0</span>)</h4>
+                <div class="pile-list" id="pile-questions"></div>
+              </div>
+              <div class="pile-card critiques">
+                <h4>🛡️ Critiques (<span id="count-critiques">0</span>)</h4>
+                <div class="pile-list" id="pile-critiques"></div>
+              </div>
+              <div class="pile-card noise">
+                <h4>💭 General / Noise (<span id="count-noise">0</span>)</h4>
+                <div class="pile-list" id="pile-noise"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 11: AUDIT & WEEKLY PLAN -->
+      <section class="tab-pane" id="tab-audit">
+        <div class="pane-grid-2">
+          <!-- Channel Audit -->
+          <div class="card">
+            <div class="card-header">
+              <h3>🎯 Single-Fix Channel Audit</h3>
+            </div>
+            <div class="card-body">
+              <div class="form-group">
+                <label>Channel Name</label>
+                <input type="text" id="audit-name" value="Code & Build Labs">
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Subscribers</label>
+                  <input type="number" id="audit-subs" value="12500">
+                </div>
+                <div class="form-group">
+                  <label>Avg Views (Last 10)</label>
+                  <input type="number" id="audit-avg-views" value="1200">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Top Video Views</label>
+                  <input type="number" id="audit-top-views" value="45000">
+                </div>
+                <div class="form-group">
+                  <label>Uploads / Week</label>
+                  <input type="number" id="audit-freq" value="1.0" step="0.5">
+                </div>
+              </div>
+              <button class="btn btn-primary" id="btn-run-audit">Identify Single Bottleneck</button>
+
+              <div id="audit-result-box" class="audit-result-box mt-4" style="display: none;">
+                <div class="bottleneck-tag" id="audit-bottleneck-title"></div>
+                <p id="audit-prescription-text" class="mt-2"></p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Weekly Schedule -->
+          <div class="card">
+            <div class="card-header">
+              <h3>📅 Hours-Matched Weekly Plan</h3>
+            </div>
+            <div class="card-body">
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Hours Available This Week</label>
+                  <input type="number" id="plan-hours" value="8" min="2" max="40">
+                </div>
+                <div class="form-group">
+                  <label>Niche</label>
+                  <input type="text" id="plan-niche" value="AI & Coding Automation">
+                </div>
+              </div>
+              <button class="btn btn-red" id="btn-generate-plan">Build Weekly Schedule</button>
+
+              <div id="plan-output-box" class="plan-schedule-box mt-4" style="display: none;">
+                <div class="schedule-tier-badge" id="plan-tier-title"></div>
+                <div id="plan-deliverables-list" class="deliverables-timeline mt-3"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 12: VOICE PROFILE -->
+      <section class="tab-pane" id="tab-voice">
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <h3>🎙️ Creator Voice Profile (<code>voice.md</code>)</h3>
+              <p class="card-sub">Every skill reads this file. Configure your tone, taboo words, and speaking persona.</p>
+            </div>
+            <button class="btn btn-primary" id="btn-save-voice">Save Voice Profile</button>
+          </div>
+          <div class="card-body">
+            <textarea id="voice-editor" class="code-box-editor" rows="18"></textarea>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Toast Notification System -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
