@@ -1,16 +1,38 @@
-node_modules/
-dist/
-.env
-.env.local
-client_secret.json
+# Node dependencies & builds
 node_modules/
 dist/
 build/
 
+# Environment secrets
 .env
 .env.local
 .env.development
 .env.production
+client_secret.json
+credentials.json
+token.json
+youtube_token.json
 
+# Video renders & media outputs
+public/renders/
+public/renders/images/
+temp_render/
+renders/
+*.mp4
+*.mp3
+*.wav
+
+# Python cache & virtualenvs
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+env/
+
+# Editor & OS files
 .vscode/
+.idea/
 .DS_Store
+Thumbs.db
